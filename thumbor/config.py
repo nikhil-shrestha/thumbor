@@ -750,8 +750,9 @@ Config.define(
 )
 
 Config.define(
-    'ACCESS_CONTROL_ALLOW_ORIGIN_HEADER', False,
-    'Sends Access-Control-Allow-Origin header'
+    "ACCESS_CONTROL_ALLOW_ORIGIN_HEADER",
+    False,
+    "Sends Access-Control-Allow-Origin header",
 )
 
 

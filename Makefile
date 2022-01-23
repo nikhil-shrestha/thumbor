@@ -2,6 +2,7 @@ PYTHON = python
 .PHONY: docs build perf
 
 OS := $(shell uname)
+HAS_GIT := $(shell command -v git 2> /dev/null)
 
 run: compile_ext
 	@thumbor -l debug -d -c thumbor/thumbor.conf
@@ -11,6 +12,9 @@ run-prod: compile_ext
 
 setup:
 	@$(PYTHON) -m pip install -e .[tests]
+ifdef HAS_GIT
+	@pre-commit install
+endif
 
 compile_ext build:
 	@$(PYTHON) setup.py build_ext -i
