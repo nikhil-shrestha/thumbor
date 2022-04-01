@@ -220,6 +220,8 @@ def main(arguments=None):
     """Converts a given url with the specified arguments."""
 
     parsed_options, arguments = get_options(arguments)
+    if not arguments:
+        exit(1)
 
     image_url = arguments[0]
     image_url = quote(image_url)
