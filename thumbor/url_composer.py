@@ -221,7 +221,7 @@ def main(arguments=None):
 
     parsed_options, arguments = get_options(arguments)
     if not arguments:
-        exit(1)
+        sys.exit(1)
 
     image_url = arguments[0]
     image_url = quote(image_url)
@@ -246,8 +246,7 @@ def main(arguments=None):
     url = crypto.generate(**thumbor_params)
     sys.stdout.write("URL:\n")
     sys.stdout.write(f"{url}\n")
-
-    return url
+    return None
 
 
 if __name__ == "__main__":
